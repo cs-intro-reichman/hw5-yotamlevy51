@@ -106,7 +106,7 @@ public class Scrabble {
 	public static String createHand() {
 
 		char[] openhand = new char[HAND_SIZE];
-		String finelstring= "";
+		String finalstring= "";
 
 		char[] englishLetters = {
 			'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
@@ -122,14 +122,17 @@ public class Scrabble {
 		int randomIndexE = (int) (Math.random() * (HAND_SIZE));
 		openhand[randomIndexE] = 'e';
 
-		int randomIndexA= (int) (Math.random() * (HAND_SIZE));
+		int randomIndexA;
+		do {
+			randomIndexA = (int) (Math.random() * HAND_SIZE);
+		} while (randomIndexA == randomIndexE);
 		openhand[randomIndexA] = 'a';
 
 		for (int i = 0; i < openhand.length; i++) {
-			finelstring += openhand[i];
+			finalstring += openhand[i];
 		}
 
-		return finelstring;
+		return finalstring;
 	}
 	
     // Runs a single hand in a Scrabble game. Each time the user enters a valid word:
