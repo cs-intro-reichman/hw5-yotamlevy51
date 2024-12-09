@@ -158,11 +158,11 @@ public class Scrabble {
 			if (isWordInDictionary(input)) {
             int wordScore = wordScore(input); 
             score += wordScore;
-            System.out.println(input + " earned " + wordScore + " points. score: " + score + " points");
+            System.out.println(input + " earned " + wordScore + " points. Total score: " + score + " points");
 
             hand = MyString.remove(hand, input);
        		} else {
-            System.out.println("Invalid word. Try again.");
+            System.out.println("No such word in the dictionary. Try again.");
         	}
 		}
 		if (hand.length() == 0) {
