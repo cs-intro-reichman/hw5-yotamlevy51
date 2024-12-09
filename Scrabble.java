@@ -192,11 +192,10 @@ public class Scrabble {
 				playHand(hand); 
 
 			} else if (input.equals("e")) {
-				System.out.println("Thanks for playing!");
 				break; 
 
 			} else {
-				System.out.println("Invalid input. Please enter 'n' to play a new hand or 'e' to end the game.");
+				System.out.println("Invalid word. Try again.");
 			}
 		}
 	}
