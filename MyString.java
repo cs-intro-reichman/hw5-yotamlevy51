@@ -69,10 +69,10 @@ public class MyString {
      * @return a string consisting of the characters of str, separated by spaces.
      */
     public static String spacedString(String str) {
-        String newstring = "";
+        String newstring = " ";
 
         for (int i = 0; i < str.length(); i++) {
-            newstring =newstring + str.charAt(i) + " ";
+            newstring =newstring + " " + str.charAt(i);
         }
         return newstring;
     }
@@ -108,16 +108,24 @@ public class MyString {
      */
     public static String remove(String str1, String str2) {
 
-        String removedString = str1;
-        
-       for (int i = 0; i < str2.length(); i++) {
-           for (int j = 0; j < str1.length(); j++) {
-                if (str1.charAt(i) == str2.charAt(j)) {
-                removedString = removedString.substring(0, i) + removedString.substring(i + 1);
+        String resulte = "";
+        String word2 = str2;
+
+       for (int i = 0; i < str1.length(); i++) {
+            char current = str1.charAt(i);
+            boolean remove = false;
+            for (int j = 0; j < word2.length(); j++) {
+                if (current == word2.charAt(j)) {
+                    remove = true;
+                    word2 = word2.substring(0, j) + word2.substring(j + 1);
+                    break;
                 }
              }
+             if (!remove) {
+                resulte += current;
+             }
         }
-        return removedString;
+        return resulte;
     }
 
     /**
