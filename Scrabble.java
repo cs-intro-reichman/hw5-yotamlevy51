@@ -142,7 +142,7 @@ public class Scrabble {
 		   
 		In in = new In();
 		while (hand.length() > 0) {
-			System.out.println("Current Hand:" + MyString.spacedString(hand));
+			System.out.println("Current Hand: " + MyString.spacedString(hand));
 			System.out.println("Enter a word, or '.' to finish playing this hand:");
 			
 			String input = in.readString();

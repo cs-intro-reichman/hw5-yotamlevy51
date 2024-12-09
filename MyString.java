@@ -76,7 +76,11 @@ public class MyString {
         }
 
         for (int i = 0; i < str.length(); i++) {
-            newstring =newstring + " " + str.charAt(i);
+            if (i == str.length()-1) {
+                newstring += str.charAt(i);
+            } else {
+            newstring += str.charAt(i) + " ";
+            }
         }
         return newstring;
     }
